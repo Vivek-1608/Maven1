@@ -1,14 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="MavenProjectsManager">
-    <option name="originalFiles">
-      <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
-</project>
+mport org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class LoginTest {
+public static void main(String[] args) throws
+InterruptedException {
+WebDriver driver = new ChromeDriver();
+driver.get(&quot;https://www.saucedemo.com/&quot;);
+driver.manage().window().maximize();
+Thread.sleep(2000);
+driver.findElement(By.id(&quot;user-
+name&quot;)).sendKeys(&quot;standard_user&quot;);
+Thread.sleep(2000);
+driver.findElement(By.id(&quot;password&quot;)).sendKeys(&quot;secret_sauc
+e&quot;);
+Thread.sleep(2000);
+driver.findElement(By.id(&quot;login-button&quot;)).click();
+Thread.sleep(2000);
+driver.quit();
+}
+}
